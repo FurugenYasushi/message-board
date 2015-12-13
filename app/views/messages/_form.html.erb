@@ -1,5 +1,6 @@
-<%= form_for(Message.new,html: {class: "form-horizontal"}) do |f| %>
-    
+
+<%= form_for @message,html: {class: "form-horizontal"} do |f| %>    
+
   <div class="form-group">
     <% if @message.errors.present? %>
       <div class="alert alert-danger">
@@ -15,7 +16,7 @@
     <% end %>
     
     <label class="col-sm-2 control-label" for="message_name">名前:</label>
-    <div class="col-sm-5">
+    <div class="col-sm-5"><%= @message_name %>
       <%= f.text_field :name ,:class=>"form-control" %>
     </div>
   </div>
